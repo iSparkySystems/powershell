@@ -1,0 +1,9 @@
+#Update Chocolatey Apps
+choco upgrade all
+
+# Remove Teamviewer
+net stop TeamViewer
+"%programfiles(x86)%\TeamViewer\uninstall.exe" /S
+
+# Remove One Drive
+Start-Process -FilePath $env:SystemRoot\SysWOW64\OneDriveSetup.exe -ArgumentList '/uninstall' -Wait -NoNewWindow
