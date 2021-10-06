@@ -1,0 +1,4 @@
+# Set POPI Compliant Lock Screen Time Out to 4 Minutes
+
+# Set Power Scheme Balanced
+POWERCFG /SETACTIVE SCHEME_BALANCED
