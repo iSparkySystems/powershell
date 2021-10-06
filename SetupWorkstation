@@ -1,0 +1,43 @@
+#This script checks for Chocolatey and installs if needed
+#Must be run as admin/system
+$choco = Join-Path -Path $env:ProgramData -ChildPath "chocolatey\choco.exe"
+
+if (!(Test-Path $choco)) {
+  Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+}else {
+  choco upgrade chocolatey
+  Write-Host "Chocolatey Found Upgrading!"
+}
+
+ECHO Configure chocolatey
+choco feature enable -n allowGlobalConfirmation
+
+#Install Adobe Reader DC
+choco install adobereader -params '"/EnableUpdateService /UpdateMode:3"' --force --yes --no-progress
+
+#Install 7Zip
+choco install 7zip -params '"/EnableUpdateService /UpdateMode:3"' --force --yes --no-progress
+
+#Install Notepad++
+choco install notepadplusplus -params '"/EnableUpdateService /UpdateMode:3"' --force --yes --no-progress
+
+#Install Microsoft Edge
+choco install microsoft-edge -params '"/EnableUpdateService /UpdateMode:3"' --force --yes --no-progress
+
+#Install Google Chrome
+choco install googlechrome -params '"/EnableUpdateService /UpdateMode:3"' --force --yes --no-progress
+
+#Install Google Drive File Stream
+choco install google-drive-file-stream -params '"/EnableUpdateService /UpdateMode:3"' --force --yes --no-progress
+
+#Install Google Outlook Sync
+# choco install gsuite-sync-outlook -params '"/EnableUpdateService /UpdateMode:3"' --force --yes --no-progress
+
+#Install PDFSam
+choco install pdfsam -params '"/EnableUpdateService /UpdateMode:3"' --force --yes --no-progress
+
+#Install VLC Media Player
+choco install vlc -params '"/EnableUpdateService /UpdateMode:3"' --force --yes --no-progress
+
+#Install Citrix Workspace
+choco install citrix-workspace -params '"/EnableUpdateService /UpdateMode:3"' --force --yes --no-progress
