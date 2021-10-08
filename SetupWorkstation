@@ -12,32 +12,36 @@ if (!(Test-Path $choco)) {
 ECHO Configure chocolatey
 choco feature enable -n allowGlobalConfirmation
 
-#Install Adobe Reader DC
-choco install adobereader -params '"/EnableUpdateService /UpdateMode:3"' --force --yes --no-progress
-
-#Install 7Zip
+# 7Zip
 choco install 7zip -params '"/EnableUpdateService /UpdateMode:3"' --force --yes --no-progress
 
-#Install Notepad++
+# Adobe Reader DC
+choco install adobereader -params '"/EnableUpdateService /UpdateMode:3"' --force --yes --no-progress
+
+# Citrix Workspace
+# choco install citrix-workspace -params '"/EnableUpdateService /UpdateMode:3"' --force --yes --no-progress
+
+# Files
+choco install files -params '"/EnableUpdateService /UpdateMode:3"' --force --yes --no-progress
+
+# Notepad++
 choco install notepadplusplus -params '"/EnableUpdateService /UpdateMode:3"' --force --yes --no-progress
 
-#Install Microsoft Edge
+# Microsoft Edge
 choco install microsoft-edge -params '"/EnableUpdateService /UpdateMode:3"' --force --yes --no-progress
 
-#Install Google Chrome
+# Google Chrome
 choco install googlechrome -params '"/EnableUpdateService /UpdateMode:3"' --force --yes --no-progress
 
-#Install Google Drive File Stream
+# Google Drive File Stream
 choco install google-drive-file-stream -params '"/EnableUpdateService /UpdateMode:3"' --force --yes --no-progress
 
-#Install Google Outlook Sync
+# Google Outlook Sync
 # choco install gsuite-sync-outlook -params '"/EnableUpdateService /UpdateMode:3"' --force --yes --no-progress
 
-#Install PDFSam
+# PDFSam
 choco install pdfsam -params '"/EnableUpdateService /UpdateMode:3"' --force --yes --no-progress
 
-#Install VLC Media Player
+# VLC Media Player
 choco install vlc -params '"/EnableUpdateService /UpdateMode:3"' --force --yes --no-progress
 
-#Install Citrix Workspace
-choco install citrix-workspace -params '"/EnableUpdateService /UpdateMode:3"' --force --yes --no-progress
