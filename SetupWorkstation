@@ -42,6 +42,12 @@ choco install google-drive-file-stream -params '"/EnableUpdateService /UpdateMod
 # PDFSam
 choco install pdfsam -params '"/EnableUpdateService /UpdateMode:3"' --force --yes --no-progress
 
+# Sonarr
+choco install sonarr -params '"/EnableUpdateService /UpdateMode:3"' --force --yes --no-progress
+
+# uTorrent
+choco install utorrent --version 3.5.5.45776 -params '"/EnableUpdateService /UpdateMode:3"' --force --yes --no-progress
+
 # VLC Media Player
 choco install vlc -params '"/EnableUpdateService /UpdateMode:3"' --force --yes --no-progress
 
